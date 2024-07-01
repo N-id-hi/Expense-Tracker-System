@@ -1,0 +1,53 @@
+COMMANDS TO RUN ON MYSQL :
+
+mysql> CREATE database ETS;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> USE ETS;
+Database changed
+mysql> CREATE TABLE expense (
+    ->     ->     exp_id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     ->     exp_type VARCHAR(20) NOT NULL,
+    ->     ->     exp VARCHAR(50),
+    ->     -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '->     exp_id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     exp_type VARCHAR(20) NO' at line 2
+mysql> CREATE TABLE expense (
+    -> exp_id INT AUTO_INCREMENT PRIMARY KEY,
+    -> exp_type VARCHAR(20) NOT NULL,
+    -> exp VARCHAR(50),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 5
+mysql> CREATE TABLE expense (
+    -> exp_id INT AUTO_INCREMENT PRIMARY KEY,
+    -> exp_type VARCHAR(20) NOT NULL,
+    -> exp VARCHAR(50),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 5
+mysql> CREATE TABLE expense (
+    ->     exp_id INT AUTO_INCREMENT PRIMARY KEY,
+    ->     exp_type VARCHAR(20) NOT NULL,
+    ->     exp VARCHAR(50),
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 5
+mysql> CREATE TABLE expense (
+    -> exp_id INT AUTO_INCREMENT PRIMARY KEY,
+    -> exp_type VARCHAR(20) NOT NULL,
+    -> exp VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> DESC expense;
++----------+-------------+------+-----+---------+----------------+
+| Field    | Type        | Null | Key | Default | Extra
+ |
++----------+-------------+------+-----+---------+----------------+
+| exp_id   | int         | NO   | PRI | NULL    | auto_increment |
+| exp_type | varchar(20) | NO   |     | NULL    |
+ |
+| exp      | varchar(50) | YES  |     | NULL    |
+ |
++----------+-------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql>
